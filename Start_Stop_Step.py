@@ -10,5 +10,6 @@ for i in range(2, 10, 2):
 for i in range(10, 0, -1):
     print(i)
 
+# como não foi declarado o STEP, ele apenas incrementará 1(+1) 
 minha_lista = list(range(1, 6))
 print(minha_lista)  # Saída: [1, 2, 3, 4, 5]
