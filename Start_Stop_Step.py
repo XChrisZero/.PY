@@ -9,3 +9,6 @@ for i in range(2, 10, 2):
 # Sequência decrescente de 10 a 1
 for i in range(10, 0, -1):
     print(i)
+
+minha_lista = list(range(1, 6))
+print(minha_lista)  # Saída: [1, 2, 3, 4, 5]
