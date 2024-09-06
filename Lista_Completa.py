@@ -3,60 +3,72 @@ my_lst = [ 1, 2, 3, 4, 5 ]
 print ( my_lst )
 print ( "------------\n\n" )
 
-# Acessando o primeiro elemento
+# Acessando o PRIMEIRO elemento
 first = my_lst [ 0 ]
 print ( first )
 print ( "------------\n\n" )
 
-# Acessando o último elemento
+# Acessando o ULTIMO elemento
 last = my_lst [ -1 ]
 print ( last )
 print ( "------------\n\n" )
 
-# Modificando o segundo elemento
-my_lst [ 1 ] = 20
+# Modificando o PENULTIMO elemento
+my_lst [ -2 ] = 20
 print ( my_lst )
 print ( "------------\n\n" )
 
-# Usando a função len() para medir o tamanho da lista
+#A função len() MEDI o tamanho 
 tamanho = len ( my_lst )
 print ( tamanho )
 print ( "------------\n\n" )
 
-# Verificando se a lista está vazia
+# VERIFICANDO se a lista está vazia
 if not my_lst:
     print ( "A lista está vazia" )
 else:
-    print ( "A lista não está vazia" )
+    print ( "A lista está Cheia!" )
+    
+print ( "____________\n\n" )
+
+if len(my_lst) == 0:
+  print("A lista está vazia")
+else:
+  print("A lista está CHEIA!")
+  print("-------------------\n\n")
+
+
+# MOSTRAR TDOOS
+for todos in my_lst:
+    print ( todos )
 print ( "------------\n\n" )
 
-# Imprimindo todos os elementos da lista
-for elemento in my_lst:
-    print ( elemento )
-print ( "------------\n\n" )
-
-# Contando quantas vezes um valor aparece na lista
+# QUANTAS VEZES APARECE
 ocorrencias = my_lst.count ( 20 )
 print ( ocorrencias )
 print ( "------------\n\n" )
 
-# Inserindo um novo elemento no final da lista
+# INSERIR um novo elemento no FINAL da lista
 my_lst.append ( 6 )
 print ( my_lst )
 print ( "------------\n\n" )
 
-# Inserindo um novo elemento em uma posição especial
+# INSERRIR um novo elemento em uma posição ESPECIAL
 my_lst.insert ( 2, 10 )
 print ( my_lst )
 print ( "------------\n\n" )
 
-# Removendo o último elemento da lista
+# REMOVER O ULTIMO
 ultimo_elemento = my_lst.pop ( )
 print ( ultimo_elemento )
 print ( my_lst )
 print ( "------------\n\n" )
 
-# Removendo um elemento específico da lista
+# REMOVER 1 ELEMENTO
 my_lst.remove ( 20 )
 print ( my_lst )
 print ( "------------\n\n" )
+
+# PROCURAR
+print(my_lst.__contains__(""))
+print("-----\n\n")
