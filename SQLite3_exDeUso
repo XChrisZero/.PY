@@ -1,0 +1,52 @@
+#Importando o modulo
+import sqlite3 
+
+#Criando e conectando com o banco de dados
+conexaoDB = sqlite3.conect("Banco_Meu")
+
+#Criando o CURSOR que aponta para o banco, o nome do cursor é da sua escolha
+apontar = conexaoDB.apontar()
+
+#criando uma tabela(entidade) dentro do banco(DB), o nome da tabela é da sua escolha
+apontar.execute("""
+    CREATE TABLE lugar_para_guardar_informacao(
+                id integer primary key autoincrement,
+                nome text,
+                telefone text)
+""")
+
+#Inserir registros na nossa tabela, tem que criar um por vez
+apontar.execute("""
+INSERT INTO lugar_para_guardar_informacao VALUES(null, 'Peter Parker', '1234-5678')
+""")
+conexaoDB.commit()
+
+#Selecionar todos os registros na sua tabela
+apontar.execute("SELECT * FROM lugar_para_guardar_informacao")
+print(apontar.fetchall())
+
+#Selecionando um registro pelo nome
+apontar.execute("SELECT * FROM lugar_para_guardar_informacao WHERE = nome = 'Peter Parker' ")
+print(apontar.fetchall())
+
+#Selecionando todos os registros e ordenando-os da forma q quiser de acordo com as colunas criadas(id, nome ou telefone)
+apontar.execute("SELECT * FROM lugar_para_guardar_informacao ORDER BY nome")
+print(apontar.fetchall())
+
+#Utilizando registros em variaveis, pode dar o nome que quiser pro registro
+registro = apontar.execute("SELECT * FROM lugar_para_guardar_informacao")
+for umRegistro in registro:
+    print(umRegistro)
+
+#Atualizar um registro
+#no caso meu unico registro, estaria no id 0 ou 1, e mudamos ele para 2
+apontar.execute(
+    "UPDATE lugar_para_guardar_informacao SET nome = 'Peter Parker' WHERE id = 2"
+)
+conexaoDB.commit()
+
+#Apagando um registro
+#onde esta o id, pode escolher qualquer campo para dar de informação
+#se não colocar o where ele deleta a tabela
+apontar.execute("DELETE FROM lugar_para_guardar_informacao WHERE id = 2")
+conexaoDB.commit()
