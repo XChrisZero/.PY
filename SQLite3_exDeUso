@@ -17,7 +17,7 @@ apontar.execute("""
 
 #Inserir registros na nossa tabela, tem que criar um por vez
 apontar.execute("""
-INSERT INTO lugar_para_guardar_informacao VALUES(null, 'Peter Parker', '1234-5678')
+INSERT INTO lugar_para_guardar_informacao VALUES(null, 'Nome do individuo', '1234-5678')
 """)
 conexaoDB.commit()
 
@@ -26,7 +26,7 @@ apontar.execute("SELECT * FROM lugar_para_guardar_informacao")
 print(apontar.fetchall())
 
 #Selecionando um registro pelo nome
-apontar.execute("SELECT * FROM lugar_para_guardar_informacao WHERE = nome = 'Peter Parker' ")
+apontar.execute("SELECT * FROM lugar_para_guardar_informacao WHERE = nome = 'Nome do individuo' ")
 print(apontar.fetchall())
 
 #Selecionando todos os registros e ordenando-os da forma q quiser de acordo com as colunas criadas(id, nome ou telefone)
@@ -41,8 +41,7 @@ for umRegistro in registro:
 #Atualizar um registro
 #no caso meu unico registro, estaria no id 0 ou 1, e mudamos ele para 2
 apontar.execute(
-    "UPDATE lugar_para_guardar_informacao SET nome = 'Peter Parker' WHERE id = 2"
-)
+    "UPDATE lugar_para_guardar_informacao SET nome = 'Nome do individuo' WHERE id = 2") # na area 'Nome do individuo', vc coloca o nome que será alterado
 conexaoDB.commit()
 
 #Apagando um registro
